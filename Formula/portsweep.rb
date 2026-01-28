@@ -5,12 +5,12 @@
 class Portsweep < Formula
   desc "TUI for managing processes listening on ports"
   homepage "https://github.com/jillesme/portsweep"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
   depends_on :macos
 
-  url "https://github.com/jillesme/portsweep/releases/download/v0.1.0/portsweep_darwin_all.tar.gz"
-  sha256 "b8b17e28f4df35e754c534653272eeebc8a954f199ed5fc40c02bb0a8ecd57dc"
+  url "https://github.com/jillesme/portsweep/releases/download/v0.2.0/portsweep_darwin_all.tar.gz"
+  sha256 "957418399c5880e0fcab25c4117d6f7ee168167088a47ad79b01b017b8e31e70"
 
   def install
     bin.install "portsweep"
