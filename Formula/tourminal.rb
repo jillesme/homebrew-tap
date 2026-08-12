@@ -30,11 +30,13 @@ class Tourminal < Formula
 
   def install
     bin.install "tourminal"
+    bin.install_symlink "tourminal" => "tour"
   end
 
   test do
+    assert_match "tourminal #{version}", shell_output("#{bin}/tour version")
     assert_match "tourminal #{version}", shell_output("#{bin}/tourminal version")
-    assert_match "name: create-codetour", shell_output("#{bin}/tourminal skill")
+    assert_match "name: create-codetour", shell_output("#{bin}/tour skill")
 
     (testpath/".tours").mkpath
     (testpath/".tours/smoke.tour").write <<~JSON
@@ -43,6 +45,6 @@ class Tourminal < Formula
         "steps": [{"description": "### Installed correctly"}]
       }
     JSON
-    assert_match "valid: Homebrew smoke test (1 steps)", shell_output("#{bin}/tourminal validate #{testpath}")
+    assert_match "valid: Homebrew smoke test (1 steps)", shell_output("#{bin}/tour validate #{testpath}")
   end
 end
