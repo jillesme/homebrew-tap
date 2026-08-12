@@ -8,29 +8,29 @@ class Tourminal < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.2/tourminal_0.1.2_darwin_arm64.tar.gz"
-      sha256 "9ff4ad39ffe5afdf84cec1834ed32f2ec0196f0047b3ca18596180ba7c16650f"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_darwin_arm64.tar.gz"
+      sha256 "e92ffeff3263904bf4012be9cf72cc1430523e1eaf234bd337faeb5f50eff880"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.2/tourminal_0.1.2_darwin_amd64.tar.gz"
-      sha256 "0d448fd04513d23ba8f5fda3f5a6b9b7d9b6ede909dde9bc826979eca0c62ad4"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_darwin_amd64.tar.gz"
+      sha256 "9ce53c2dcbc187ba27322e3cfd67ce386abe2fc6dbb2e05b17cfd37233c5f1f6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.2/tourminal_0.1.2_linux_arm64.tar.gz"
-      sha256 "a966266c0ad9f3f6241001256f509b4579f56f4e9511d243ed8e79d5bbadd2e9"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_linux_arm64.tar.gz"
+      sha256 "e80ff60a6af67b02b10bb29c357a3e626fdd40a6511d84550653d43f24d54d5c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.2/tourminal_0.1.2_linux_amd64.tar.gz"
-      sha256 "0c6592a2e8198df8cee1fcf0328b3c485cde5c6bcb51e88155b69b8000cab93d"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_linux_amd64.tar.gz"
+      sha256 "f3c4467e1089d7985672bbeae4551631e2b3c91077f3fd1d712f41d33765d657"
     end
   end
 
   def install
-    bin.install "tourminal"
-    bin.install_symlink "tourminal" => "tour"
+    bin.install "tour"
+    bin.install_symlink "tour" => "tourminal"
   end
 
   test do
