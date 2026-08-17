@@ -8,23 +8,23 @@ class Tourminal < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_darwin_arm64.tar.gz"
-      sha256 "e92ffeff3263904bf4012be9cf72cc1430523e1eaf234bd337faeb5f50eff880"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.4/tourminal_0.1.4_darwin_arm64.tar.gz"
+      sha256 "2ba5b3941314d1de583da61ae1a74504988aa2a742ca31b5622490ce017f7d4b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_darwin_amd64.tar.gz"
-      sha256 "9ce53c2dcbc187ba27322e3cfd67ce386abe2fc6dbb2e05b17cfd37233c5f1f6"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.4/tourminal_0.1.4_darwin_amd64.tar.gz"
+      sha256 "31aa3bc85dacc4aa4c5fc71deed44082d0c18d59474992e5d252a6248f477c56"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_linux_arm64.tar.gz"
-      sha256 "e80ff60a6af67b02b10bb29c357a3e626fdd40a6511d84550653d43f24d54d5c"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.4/tourminal_0.1.4_linux_arm64.tar.gz"
+      sha256 "acf2d09717478f0cf6ee91d09be87b15cc248ce64588bbe533d7e0b6fb02ae75"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jillesme/tourminal/releases/download/v0.1.3/tourminal_0.1.3_linux_amd64.tar.gz"
-      sha256 "f3c4467e1089d7985672bbeae4551631e2b3c91077f3fd1d712f41d33765d657"
+      url "https://github.com/jillesme/tourminal/releases/download/v0.1.4/tourminal_0.1.4_linux_amd64.tar.gz"
+      sha256 "33919bf048e2dd7b2fc4569573ef4adb569cddd34c8fccce877c80f7e972a84e"
     end
   end
 
@@ -46,5 +46,6 @@ class Tourminal < Formula
       }
     JSON
     assert_match "valid: Homebrew smoke test (1 steps)", shell_output("#{bin}/tour validate #{testpath}")
+    assert_match '"apiVersion": 1', shell_output("#{bin}/tour inspect --json #{testpath}")
   end
 end
